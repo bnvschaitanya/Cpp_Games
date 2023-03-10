@@ -17,10 +17,10 @@ COORD CursorPosition;
 int enemyY[3];  
 int enemyX[3];  
 int enemyFlag[3];  
-char car[4][4] = { ' ','±','±',' ',   
-                    '±','±','±','±',   
-                    ' ','±','±',' ',  
-                    '±','±','±','±' };   
+char car[4][4] = { ' ','Â±','Â±',' ',   
+                    'Â±','Â±','Â±','Â±',   
+                    ' ','Â±','Â±',' ',  
+                    'Â±','Â±','Â±','Â±' };   
                       
 int carPos = WIN_WIDTH/2;  
 int score = 0;   
@@ -84,12 +84,12 @@ void setcursor(bool visible, DWORD size) {
 void drawBorder(){    
     for(int i=0; i<SCREEN_HEIGHT; i++){  
         for(int j=0; j<17; j++){  
-            gotoxy(0+j,i); cout<<"±";  
-            gotoxy(WIN_WIDTH-j,i); cout<<"±";  
+            gotoxy(0+j,i); cout<<"Â±";  
+            gotoxy(WIN_WIDTH-j,i); cout<<"Â±";  
         }  
     }   
     for(int i=0; i<SCREEN_HEIGHT; i++){  
-        gotoxy(SCREEN_WIDTH,i); cout<<"±";  
+        gotoxy(SCREEN_WIDTH,i); cout<<"Â±";  
     }   
 }  
 void genEnemy(int ind){  
@@ -242,4 +242,16 @@ void play(){
     }  
 }  
 
-
+/*
+Explaination about behaviour of functions used in this above code:
+The gotoxy() function is used to move the cursor to a specified location on the screen.
+The COORD data structure stores the x and y coordinates of the position to move the cursor to.
+The GetStdHandle() function is used to retrieve the Standard Input, Standard Output and Standard Error Handles.
+The srand() function, which is part of the C++ STL, is used to initialise the random number generator by setting a seed value.Â 
+The rand() function can then be used to generate a stream of pseudo-random numbers.Â 
+The gotoxy() function is very useful for printing messages at specific locations on the screen, as it allows for precise control over the exact position of text.
+The COORD structure is an important part of this, as it stores the x and y coordinates that are used to set the cursor position.Â 
+The GetStdHandle() function is used to retrieve the Standard Input, Standard Output and Standard Error Handles, which are used to control the flow of information.
+The srand() and rand() functions are also important for generating random numbers, which can be used for a variety of different tasks.Â 
+All of these functions are essential for controlling the flow of information and providing precise control over the output of a program.
+*/
